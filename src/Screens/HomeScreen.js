@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from 'react';
-import './HomeScreen.js';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar.js';
 import Banner from '../Components/BannerCarousal/Banner';

@@ -1,5 +1,4 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import './Advertisement.css';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import userContext from '../Context/User/UserContext';

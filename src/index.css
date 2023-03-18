@@ -18,3 +18,925 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Banner */
+.banner {
+  position: relative;
+  object-fit: contain;
+  color: white;
+  height: 500px;
+}
+
+.banner>img {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.banner-content {
+  margin-left: 30px;
+  padding-top: 10em;
+  height: 190px;
+  max-width: 800px;
+}
+
+.banner-title {
+  font-size: 3em;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.banner-description {
+  font-size: 15px;
+}
+
+.banner-bottom-overlay-fade {
+  position: relative;
+  bottom: -195px;
+  width: 100%;
+  height: 7.4rem;
+  background-image: linear-gradient(
+      180deg,
+      transparent,
+      rgba(37, 37, 37, 0.61),
+      #111
+  );
+}
+
+.banner-buttons * {
+  margin: 5px;
+  margin-left: 0;
+}
+
+.banner-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  outline: none;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: rgba(36, 36, 36, 0.6);
+  transition: all 0.2s;
+}
+
+.banner-button:hover {
+  color: black;
+  background-color: white;
+}
+
+@media (max-width: 400px) {
+  .banner-content {
+      padding-top: 6em;
+  }
+
+  .banner-title {
+      font-size: 2em;
+      font-weight: bold;
+      padding-bottom: 10px;
+  }
+
+  .banner-description {
+      font-size: 1em;
+  }
+}
+
+
+/* Loading */
+/* Loading Banner Card */
+.banner-card {
+    background-color: rgb(59, 59, 59);
+    width: 100%;
+    height: 500px;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Loading Movie Card*/
+.movie-card-loading {
+  /* object-fit: contain; */
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  width: calc(100% / var(--items-per-screen));
+  height: 19em;
+  /* margin-right: 10px; */
+  width: 95%;
+  transition: transform 100ms;
+  cursor: pointer;
+  /* background-color: gray; */
+
+  background: rgb(12, 12, 12);
+  background: linear-gradient(110deg, #303030 8%, #2e2e2e 18%, #313131 33%);
+  /* border-radius: 5px; */
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+}
+
+/* .movie-card-loading:hover {
+
+} */
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+
+/* Footer */
+.footer {
+  width: 100%;
+  height: 5em;
+  border-top: 7px solid rgb(61, 61, 61);
+  /* border-bottom: 7px solid rgb(61, 61, 61); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.footer-developer-tag {
+  font-size: 1em;
+}
+
+.footer-content>p {
+  text-align: center;
+}
+
+.footer-content>p>strong {
+  color: #E50914;
+}
+
+@media (max-width: 400px) {
+  .footer-developer-tag {
+      font-size: 0.6em;
+  }   
+}
+
+
+/* Movie */
+.movie-poster {
+  /* object-fit: contain; */
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  /* max-width: calc(100% / var(--items-per-screen)); */
+  max-height: 19em;
+  /* margin-right: 10px; */
+  /* width: 100%; */
+  transition: transform 100ms;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+}
+
+.movie-poster>img {
+  width: 95%;
+  height: 100%;
+}
+
+.movie-poster:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.movie-poster-large:hover {
+  transform: scale(1.09);
+  opacity: 1;
+}
+
+.movie-poster-hover-element {
+  width: 95%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  padding: 30px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* border: 1px solid red; */
+}
+
+.movie-poster-hover-element>h3 {
+  color: white;
+}
+
+.movie-poster-hover-element--play-icon-holder {
+  width: 95%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-poster-hover-element--play-icon-holder>div {
+  width: 3em;
+  height: 3em;
+  border: 2px solid white;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-poster-hover-element--play-icon-holder>div>i {
+  font-size: 1.5em;
+  color: white;
+}
+
+
+/* Navbar */
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-logo {
+  width: 150px;
+  object-fit: contain;
+}
+
+.nav-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 100;
+  transition-timing-function: ease-in;
+  transition: all 0.3s;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+  /* border: 1px solid white; */
+}
+
+.nav-black {
+  background-color: black;
+}
+
+.btn-sign-in {
+  padding: 10px;
+  color: white;
+  border: none;
+  margin: none;
+  border-radius: 2px;
+  background-color: #E50914;
+}
+
+@media (max-width: 600px) {
+  .nav {
+      height: 5em;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  .nav-logo {
+      width: 7em;
+      object-fit: contain;
+  }
+
+  .btn-sign-in {
+      padding: 5px;
+      color: white;
+      border: none;
+      margin: none;
+      border-radius: 2px;
+      background-color: #E50914;
+  }
+
+  .nav-avatar {
+      width: 4em;
+      height: 4em;
+  }
+}
+
+
+/* Row */
+.row {
+  color: white;
+  margin-left: 20px;
+}
+
+.row-posters {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.row-poster {
+  object-fit: contain;
+  max-height: 150px;
+  width: 100%;
+  margin-right: 10px;
+  width: 100%;
+  transition: transform 450ms;
+}
+
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row-poster:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.row-poster-large:hover {
+  transform: scale(1.09);
+  opacity: 1;
+}
+
+
+/* Advertisement */
+.advertisement {
+  color: white;
+}
+
+.adv-get-started-banner {
+  position: relative;
+  object-fit: contain;
+  height: 500px;
+  color: white;
+}
+
+.adv-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  background-image: linear-gradient(
+      to top,
+      rgba(0,0,0,0.8) 0,
+      rgba(0,0,0,0) 60%,
+      rgba(0,0,0,0.8) 100%
+  );
+  /* border: 1px solid white; */
+}
+
+.border-bottom-thick {
+  border-bottom: 7px solid rgb(61, 61, 61);
+}
+
+.adv-get-started-form-container {
+  /* border: 1px solid white; */
+  position: relative;
+  margin-top: -400px;
+  margin-bottom: 130px;
+  z-index: 11;
+}
+
+.adv-get-started-form-container-text {
+  margin: auto;
+  max-width: 630px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.adv-get-started-form-container h1 {
+  font-size: 3em;
+}
+
+.adv-get-started-form-container h3 {
+  /* font-size: 1em; */
+  margin-top: 30px;
+}
+
+.adv-get-started-form-container form {
+  max-width: 630px;
+  margin: auto;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+}
+
+.adv-get-started-form-container form>input {
+  width: 70%;
+  height: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.adv-get-started-form-container form>button {
+  width: 30%;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1em;
+  background-color: #E50914;
+}
+
+.login-adv-div {
+  /* border: 1px solid white; */
+  max-width: 1000px;
+  margin-bottom: 10px;
+  margin: auto; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.login-adv-div>div {
+  margin: auto;
+  width: 100%;
+}
+
+.login-adv-div>img {
+  margin: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+.login-adv-description {
+  padding: 60px;
+}
+
+.login-adv-description>h1 {
+  font-size: 3em;
+}
+
+.login-adv-description>h2 {
+  font-weight: lighter;
+}
+
+.adv-column {
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  
+  .adv-get-started-form-container h1 {
+      font-size: 2em;
+  }
+
+  .login-adv-description {
+      padding: 10px;
+  }
+  
+  .login-adv-description>h1 {
+      font-size: 1.5rem;
+  }
+
+  .login-adv-description>h2 {
+      font-weight: lighter;
+  }
+}
+
+
+/* Homescreen */
+.homescreen {
+  margin-bottom: 20px;
+}
+
+
+/* Playscreen */
+.play {
+  color: white;
+}
+
+.playscreen {
+  position: relative;
+  object-fit: contain;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-color: black;
+}
+
+.overlay-playscreen {
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: rgba(0, 0, 0, 
+  0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* For hiding purpose 
+  opacity: 1;
+  transition: opacity 0.2s; */
+}
+
+.playscreen-btn-container {
+  width: 3em;
+  height: 3em;
+  /* border: 1px solid white; */
+}
+
+.btn-playscreen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color:  #E50914;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playscreen-movie-info {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 100px;
+}
+
+.playscreen-movie-info * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.playscreen-backdrop-image {
+  object-fit: cover;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* @media (max-width: 600px) {
+  .playscreen-btn-container  {
+      width: 2em;
+      height: 2em;
+  }
+
+  .btn-playscreen {
+      font-size: 0.7rem;
+  }
+} */
+/* 
+@media (max-width: 400px) {
+  .playscreen-btn-container  {
+      width: 1em;
+      height: 1em;
+  }
+
+  .btn-playscreen {
+      font-size: 0.5rem;
+  }
+} */
+
+
+/* Profilescreen */
+.profile-page {
+  color: white;
+  width: 100%;
+  height: 100vh;
+}
+
+.profile-container {
+  position: relative;
+  top: 20%;
+  /* border: 1px solid white; */
+  max-width: 500px;
+  /* height: 500px; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid rgb(43, 43, 43);
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  font-size: 0.8em;
+}
+
+.user-avatar-container {
+  width: 20%;
+}
+
+.user-avatar {
+  width: 100%;
+}
+
+.user-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+}
+
+.user-email {
+  background-color: rgb(43, 43, 43);
+  padding: 10px;
+}
+
+.user-plans {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.plan {
+  background-color: rgb(43, 43, 43);
+  padding: 0.5em;
+  width: calc(33.33% - 1%);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.plan:hover {
+  background-color: #e50914c9;
+}
+
+.plan-active {
+  background-color: #E50914;
+}
+
+.user-plan-info {
+  padding: 10px;
+}
+
+.user-plan-info > *{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.btn-user-sign-out {
+  width: 100%;
+  background-color: #E50914;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+}
+
+.btn-continue-plan {
+  width: 100%;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  margin-bottom: 10px;
+  transition: background-color 0.1s;
+}
+
+.btn-continue-plan:hover {
+  background-color: rgba(128, 128, 128, 0.8);
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+      padding: 5px;
+  }
+  
+  .profile-page {
+      height: calc(100vh + 200px);
+  }
+}
+
+
+/* SignInScreen */
+.signin {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/935156fb-9579-4fc2-ad94-70680402b8ef/3689d1b9-def2-446b-bc6c-ba159a4469f8/IN-en-20230109-popsignuptwoweeks-perspective_alpha_website_large.jpg") no-repeat center center;
+  object-fit: contain;
+  background-size: cover;
+}
+
+.signin-background-overlay {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  background: rgba(0,0,0,0.4);
+  background-image: linear-gradient(
+      to top,
+      rgba(0,0,0,0.8) 0,
+      rgba(0,0,0,0) 60%,
+      rgba(0,0,0,0.8) 100%
+  );
+}
+
+.signin-form-container {
+  position: relative;
+  z-index: 20;
+  /* border: 1px solid white; */
+  margin: auto;
+  top: 20%;
+  max-width: 400px;
+  min-height: 400px;
+  padding: 60px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.signin-form-container>form {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid white; */
+}
+
+.signin-form-container>form>input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background-color: rgb(54, 54, 54);
+  color: white;
+}
+
+.signin-form-container>form>button {
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  background-color: #E50914;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  margin-top: 30px;
+}
+
+.info {
+  margin-top: 10px;
+  color: darkgray;
+  font-size: 13px;
+}
+
+.info>p {
+  text-align: center;
+}
+
+.info button {
+  background: none;
+  color: white;
+  font-weight: bold;
+}
+
+.info button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+  .signin-form-container {
+      padding: 30px 10px;
+      min-height: auto;
+  }
+
+  .signin {
+      height: 150vh;
+  }
+}
+
+
+/* SignUpScreen */
+.signup {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url("https://assets.nflxext.com/ffe/siteui/vlv3/935156fb-9579-4fc2-ad94-70680402b8ef/3689d1b9-def2-446b-bc6c-ba159a4469f8/IN-en-20230109-popsignuptwoweeks-perspective_alpha_website_large.jpg") no-repeat center center;
+    object-fit: contain;
+    background-size: cover;
+}
+
+.signup-background-overlay {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    background: rgba(0,0,0,0.4);
+    background-image: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8) 0,
+        rgba(0,0,0,0) 60%,
+        rgba(0,0,0,0.8) 100%
+    );
+}
+
+.signup-form-container {
+    position: relative;
+    z-index: 20;
+    /* border: 1px solid white; */
+    margin: auto;
+    top: 20%;
+    max-width: 400px;
+    min-height: 400px;
+    padding: 60px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.signup-form-container>form {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid white; */
+}
+
+.signup-form-container>form>input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+
+.signup-form-container>form>button {
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    color: white;
+    background-color: #E50914;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    margin-top: 30px;
+}
+
+.info {
+    margin-top: 10px;
+    color: darkgray;
+    font-size: 13px;
+}
+
+.info>p {
+    text-align: center;
+}
+
+.info button {
+    background: none;
+    color: white;
+    font-weight: bold;
+}
+
+.info button:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+    .signup-form-container {
+        padding: 30px 10px;
+        min-height: auto;
+    }
+
+    .signup {
+        height: 150vh;
+    }
+}

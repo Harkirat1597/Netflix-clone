@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import './Movie.css';
 import { useNavigate } from "react-router-dom";
 import MovieContext from "../Context/Movie/MovieContext";
 import MovieCard from "./Loading/MovieCard";

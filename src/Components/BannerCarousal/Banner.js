@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react'
-import './Banner.css';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../API_Configurations/axios';
 import requests from '../../API_Configurations/Requests';

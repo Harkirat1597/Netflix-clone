@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import './ProfileScreen.css';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Avatar from '../Icons/Avatar.jpeg';

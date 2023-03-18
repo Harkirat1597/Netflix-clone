@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import './PlayScreen.css';
 import Navbar from '../Components/Navbar';
 import MovieContext from '../Context/Movie/MovieContext';
 

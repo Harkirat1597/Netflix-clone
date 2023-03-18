@@ -1,5 +1,4 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
-import './SignUpScreen.css';
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import userContext from "../Context/User/UserContext";
@@ -55,7 +54,7 @@ const SignUpScreen = () => {
                         />
                         <input 
                             type={"password"} 
-                            placeholder={"Conform password"}
+                            placeholder={"Confirm password"}
                             ref={confirmPassRef}
                             required 
                         />

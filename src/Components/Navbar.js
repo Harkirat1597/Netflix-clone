@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react'
-import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import NetflixIcon from '../Icons/NetflixIcon.png';
 import Avatar from '../Icons/Avatar.jpeg';

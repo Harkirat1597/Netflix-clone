@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './Row.css';
 import axios from '../API_Configurations/axios';
 import Movie from './Movie';
 
