@@ -1,37 +1,38 @@
 import React, { useState, useEffect } from "react";
 import UserContext from "./UserContext";
 
-const UserState = (props) => {
-    const initialStateUser = {
-        email: "",
-        password: "",
-        isLoggedIn: false,
-        planActive: {},
-        isPlanActive: false
+const initialStateUser = {
+    email: "",
+    password: "",
+    isLoggedIn: false,
+    planActive: {},
+    isPlanActive: false,
+    watchlist: []
+}
+
+const plans = [
+    {
+        id: 1,
+        validity: "1 year",
+        price: 1799
+    },
+    {
+        id: 2,
+        validity: "6 months",
+        price: 1199
+    },
+    {
+        id: 3,
+        validity: "1 month",
+        price: 699
     }
+]
 
-    const plans = [
-        {
-            id: 1,
-            validity: "1 year",
-            price: 1799
-        },
-        {
-            id: 2,
-            validity: "6 months",
-            price: 1199
-        },
-        {
-            id: 3,
-            validity: "1 month",
-            price: 699
-        }
-    ]
-
+const UserState = (props) => {
     const [user, setUser] = useState(() => {
         let localUser = JSON.parse(localStorage.getItem("localUserNetflix"));
         if (!localUser) return initialStateUser;
-        return localUser;
+        else return localUser;
     });
 
     useEffect(() => {
@@ -84,6 +85,18 @@ const UserState = (props) => {
         return {success: true, message: "Thank you for purchasing our services!"}
     }
 
+    const addToWatchlist = (movie) => {
+        if (!movie) return;
+        let newWatchlist = [...user.watchlist, movie];
+        updateUser({watchlist: newWatchlist});
+    }
+
+    const removeFromWatchlist = ({ id }) => {
+        if (!id) return;
+        let newWatchlist = user.watchlist.filter((movie) => movie.id !== id);
+        updateUser({watchlist: newWatchlist});
+    }
+
     let value = {
         user,
         updateUser,
@@ -91,7 +104,10 @@ const UserState = (props) => {
         signUpUser,
         signInUser,
         plans,
-        buyPlan
+        buyPlan,
+        addToWatchlist,
+        removeFromWatchlist,
+        watchlist: user.watchlist ? user.watchlist : []
     }
 
     return <UserContext.Provider value={value}>

@@ -119,8 +119,8 @@ const RowCarousal = ({ title, fetchUrl, isLargeRow = false }) => {
                 </button>
 
                 <div class="slider">
-                    {movies.map((movie) => {
-                        return <Movie movie={movie} isLargeRow={isLargeRow} />
+                    {movies.map((movie, idx) => {
+                        return <Movie key={idx} movie={movie} isLargeRow={isLargeRow} />
                     })}
                 </div>
 

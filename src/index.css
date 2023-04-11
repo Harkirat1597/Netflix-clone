@@ -19,6 +19,13 @@ code {
     monospace;
 }
 
+.text-small {
+  font-size: 0.8rem;
+}
+
+.text-white {
+  color: white;
+}
 
 /* Banner */
 .banner {
@@ -939,4 +946,9 @@ code {
     .signup {
         height: 150vh;
     }
+}
+
+.btn-scale-onHover-increase:hover {
+  transition: all 0.1s;
+  transform: scale(1.09);
 }
